@@ -7,7 +7,6 @@
     <body>
 <?php
 
-session_start();
 $db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 if ($db->connect_errno){
 	
@@ -35,8 +34,6 @@ echo "<p>";
 	else{
 		echo "tambah data gagal";
 	}
-}
-
 }
 
 echo "<center>Anda Terdaftar Sebagai";
