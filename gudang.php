@@ -8,16 +8,17 @@
 <img src="finallogo.png" style="width:200px;height:100px alt=Home"><br>
 <a href=homes.html><h4 style="color:blue;">Home</h4></a><br>
 <?php
+session_start();
 $db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 if ($db->connect_errno){
 	
 	echo "error gan".$db->connect_error;
 }
 
-session_start();
+
 $upengguna = $_SESSION['pengguna'];
 
-$db = new mysqli("localhost", "root", "", "wk");
+
 $query = "SELECT * FROM databasegudang WHERE (username='".$upengguna."')";
 echo "<br>";
 echo "<center><h2>[Gudang]</h2>";
