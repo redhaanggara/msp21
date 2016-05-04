@@ -1,6 +1,10 @@
 <?php
 session_start();
-include("db.php");
+$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
+if ($db->connect_errno){
+	
+	echo "error gan".$db->connect_error;
+}
 
 
 
@@ -8,7 +12,7 @@ function hapusData($id){
 	$usher= $_SESSION['pengguna'];
 	$query = "DELETE FROM databasehutang WHERE no='$id' AND username='$usher'";
 	echo $query;
-	$db = new mysqli("localhost", "root", "", "wk");
+        $db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 	if(mysqli_query($db,$query) or die ('gagal')){
 		return true;
 	}
