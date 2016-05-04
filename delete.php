@@ -11,6 +11,7 @@ function hapusData($id){
 	$usher= $_SESSION['pengguna'];
 	$query = "DELETE FROM databasegudang WHERE no='$id' AND username='$usher'";
 	echo $query;
+	$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 	if(mysqli_query($db,$query) or die ('gagal')){
 		return true;
 	}
