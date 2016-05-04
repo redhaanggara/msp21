@@ -2,14 +2,18 @@
 <a href=gudang.php><h4 style="color:blue;">Back</h4></a><br>
 <?php
 session_start();
-include("db.php");
+$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
+if ($db->connect_errno){
+	
+	echo "error gan".$db->connect_error;
+}
 
 function tambahData($br,$hb,$hj,$st){
 	$usher= $_SESSION['pengguna'];
 	$query = "INSERT INTO databasegudang
 	(username,namabarang,hargabeli,hargajual,stock)
 	VALUES ('$usher','$br',$hb,$hj,$st)";
-	$db = new mysqli("localhost", "root", "", "wk");
+	$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 	if(mysqli_query($db,$query) or die ('gagal')){
 		return true;
 	}
