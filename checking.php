@@ -2,11 +2,7 @@
  $uname = $_POST ['uname'];
  $pass = $_POST ['pass'];
 
-$db = new mysqli("localhost", "root", "", "wk");
-if ($db->connect_errno){
-	
-	echo "error gan".$db->connect_error;
-}
+include("db.php");
 
 $sql= "SELECT count(*) FROM userwk WHERE(username ='".$uname."' and password ='".$pass."')" ;
 $qury = mysqli_query($db,$sql);
