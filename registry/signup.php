@@ -15,16 +15,14 @@ if ($db->connect_errno){
 
 
 $submit = $_POST['btnregister'];
-$query =$db->prepare("INSERT INTO userwk (fullname,email,username,password) 
-VALUES (?,?,?,?)");
-
-$query->bind_param('ssss',$fullname,$email,$username,$password);
-
 if (isset($submit)){
 $fullname = $_POST['fn'];
 $email = $_POST['email'];
 $username = $_POST['un'];
 $password = $_POST['pw'];
+$query ="INSERT INTO userwk (fullname,email,username,password) 
+VALUES ('$fullname','$email','$username','$password')";
+$query->bind_param('ssss',$fullname,$email,$username,$password);
 $query->execute();
 echo "<center>Register Success</center>";
 echo "<p>";
