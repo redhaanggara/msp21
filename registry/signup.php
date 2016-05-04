@@ -15,10 +15,11 @@ if ($db->connect_errno){
 
 
 function tambahData($f,$mail,$un,$pass){
+	$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 	$query = "INSERT INTO userwk
 	(fullname,email,username,password)
 	VALUES ('$f','$mail','$un','$pass')";
-	$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
+	
 	if(mysqli_query($db,$query) or die ('gagal')){
 		return true;
 	}
