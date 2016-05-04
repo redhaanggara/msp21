@@ -2,11 +2,7 @@
 <a href=gudang.php><h4 style="color:blue;">Back</h4></a><br>
 <?php
 session_start();
-$db = new mysqli("localhost", "root", "", "wk");
-if ($db->connect_errno){
-	
-	echo "error gan".$db->connect_error;
-}
+include("db.php");
 
 function tambahData($br,$hb,$hj,$st){
 	$usher= $_SESSION['pengguna'];
