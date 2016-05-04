@@ -24,7 +24,7 @@
 	<img src="finallogo.png"height="150" width="150">
   </div>
   <h2><?php echo $_SESSION['pengguna'];?></h2>
-  <h4><?php $db = new mysqli("localhost", "root", "", "wk");
+  <h4><?php include("db.php");
 	$query = "SELECT * FROM userwk WHERE (username ='".$_SESSION['pengguna']."')"; 
 	if ($is_query_run=mysqli_query($db,$query)){
 	while($query_execute=mysqli_fetch_assoc($is_query_run)){
