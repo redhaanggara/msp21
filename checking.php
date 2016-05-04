@@ -2,7 +2,11 @@
  $uname = $_POST ['uname'];
  $pass = $_POST ['pass'];
 
-include("db.php");
+$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
+if ($db->connect_errno){
+	
+	echo "error gan".$db->connect_error;
+}
 
 $sql= "SELECT count(*) FROM userwk WHERE(username ='".$uname."' and password ='".$pass."')" ;
 $qury = mysqli_query($db,$sql);
