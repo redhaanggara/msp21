@@ -7,7 +7,7 @@
     <body>
 <?php
 
-include("db.php");
+include("../db.php");
 
 
 $submit = $_POST['btnregister'];
