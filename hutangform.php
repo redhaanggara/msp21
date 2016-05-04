@@ -9,7 +9,7 @@
 <a href=homes.html><h4 style="color:blue;">Home</h4></a><br>
 <center><h2>[Daftar Penghutang]</h2>
 <?php
-require 'db.php';
+include("db.php");
 session_start();
 $upengguna = $_SESSION['pengguna'];
 
