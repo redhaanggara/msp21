@@ -13,6 +13,15 @@ if ($db->connect_errno){
 	echo "error gan".$db->connect_error;
 }
 
+if (isset($_POST['btnregister'])){
+	if(tambahData($_POST['fn'],$_POST['email'],$_POST['un'],$_POST['pw'])){
+		echo "<center>Register Success</center>";
+echo "<p>";
+	}
+	else{
+		echo "tambah data gagal";
+	}
+}
 
 function tambahData($f,$mail,$un,$pass){
 	$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
@@ -25,15 +34,6 @@ function tambahData($f,$mail,$un,$pass){
 	}
 	else{
 		return false;
-	}
-}
-if (isset($_POST['btnregister'])){
-	if(tambahData($_POST['fn'],$_POST['email'],$_POST['un'],$_POST['pw'])){
-		echo "<center>Register Success</center>";
-echo "<p>";
-	}
-	else{
-		echo "tambah data gagal";
 	}
 }
 
