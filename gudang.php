@@ -8,7 +8,7 @@
 <img src="finallogo.png" style="width:200px;height:100px alt=Home"><br>
 <a href=homes.html><h4 style="color:blue;">Home</h4></a><br>
 <?php
-require 'db.php';
+include("db.php");
 
 session_start();
 $upengguna = $_SESSION['pengguna'];
