@@ -9,7 +9,11 @@
 <?php
 session_start();
 
-include("db.php");
+$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
+if ($db->connect_errno){
+	
+	echo "error gan".$db->connect_error;
+}
 
 if (isset($_POST['btndo'])){
 	
@@ -26,7 +30,7 @@ function editData($br,$hb,$hj,$st,$id){
 	         hargabeli=$hb, hargajual=$hj, stock=$st 
 			 WHERE no=$id";
 			 
-	$db = new mysqli("localhost", "root", "", "wk");
+	$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 	if(mysqli_query($db,$query) or die ('gagal')){
 		return true;
 	}
@@ -37,7 +41,7 @@ function editData($br,$hb,$hj,$st,$id){
 
 function tampilperid ($id){
 	$upengguna = $_SESSION['pengguna'];
-	$db = new mysqli("localhost", "root", "", "wk");
+	$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 	$query = "SELECT * FROM databasegudang WHERE (no ='".$id.
 	"' AND username='".$upengguna."')";
 	$result = mysqli_query($db,$query) or die ("gagal");
