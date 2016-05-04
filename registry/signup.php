@@ -17,7 +17,7 @@ function tambahData($f,$mail,$un,$pass){
 	$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 	$query = "INSERT INTO userwk
 	(fullname,email,username,password)
-	VALUES ('$f','$mail','$un','$pass')";
+	VALUES ('"$f"','"$mail"','"$un"','"$pass"')";
 	
 	if(mysqli_query($db,$query) or die ('gagal')){
 		return true;
@@ -28,7 +28,7 @@ function tambahData($f,$mail,$un,$pass){
 }
 
 if (isset($_POST['btnregister'])){
-	if(tambahData($_POST["fn"],$_POST["email"],$_POST["un"],$_POST["pw"])){
+	if(tambahData($_POST['fn'],$_POST['email'],$_POST['un'],$_POST['pw'])){
 		echo "<center>Register Success</center>";
 	}
 	else{
