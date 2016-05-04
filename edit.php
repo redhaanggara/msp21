@@ -9,12 +9,7 @@
 <?php
 session_start();
 
-$db = new mysqli("localhost", "root", "", "wk");
-
-if ($db->connect_errno){
-	
-	echo "error gan".$db->connect_error;
-}
+include("db.php");
 
 if (isset($_POST['btndo'])){
 	
