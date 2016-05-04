@@ -9,11 +9,15 @@
 <a href=homes.html><h4 style="color:blue;">Home</h4></a><br>
 <center><h2>[Daftar Penghutang]</h2>
 <?php
-include("db.php");
+$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
+if ($db->connect_errno){
+	
+	echo "error gan".$db->connect_error;
+}
 session_start();
 $upengguna = $_SESSION['pengguna'];
 
-$db = new mysqli("localhost", "root", "", "wk");
+$db = new mysqli("ap-cdbr-azure-southeast-b.cloudapp.net", "b5a0b7e6a5eda4", "d36febb7", "wk");
 $query = "SELECT * FROM databasehutang WHERE (username='".$upengguna."')";
 echo "<br>";
 echo "<center><table border=1 style=width:800px>
