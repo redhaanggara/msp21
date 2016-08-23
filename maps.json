@@ -1,0 +1,22 @@
+{
+  "countryList": [
+    {
+      "latitude": -31.711802,
+      "longitude": 115.791962,
+      "city": "Perth",
+      "desc": ""
+    },
+    {
+      "latitude": -34.734831,
+      "longitude": 138.621551,
+      "city": "Adelaide",
+      "desc": ""
+    },
+    {
+      "latitude": -33.644338,
+      "longitude":  151.409637,
+      "city": "Sydney",
+      "desc": ""
+    }
+  ]
+}
