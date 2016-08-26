@@ -1,0 +1,22 @@
+{
+  "barbershopList": [
+    {
+      "latitude": -2.711802,
+      "longitude": 115.791567,
+      "city": "Scicors",
+      "desc": ""
+    },
+    {
+      "latitude": -5.734831,
+      "longitude": 138.62567,
+      "city": "Maxxis",
+      "desc": ""
+    },
+    {
+      "latitude": -6.644338,
+      "longitude":  6.409637,
+      "city": "Raja Cukur",
+      "desc": ""
+    }
+  ]
+}
