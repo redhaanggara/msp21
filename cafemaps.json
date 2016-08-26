@@ -1,0 +1,22 @@
+{
+  "cafeList": [
+    {
+      "latitude": -6.711802,
+      "longitude": 115.791567,
+      "city": "Cafe Ceria",
+      "desc": ""
+    },
+    {
+      "latitude": -4.734831,
+      "longitude": 138.62567,
+      "city": "Cafe Uda",
+      "desc": ""
+    },
+    {
+      "latitude": -7.644338,
+      "longitude":  11.409637,
+      "city": "Cafe RBN",
+      "desc": ""
+    }
+  ]
+}
